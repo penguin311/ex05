@@ -12,9 +12,9 @@ const PostsPage = () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(json => {
-        setLast(Math.ceil(json.length / 5));
-        let start = (page - 1) * 5 + 1;
-        let end = (page * 5);
+        setLast(Math.ceil(json.length / 10));
+        let start = (page - 1) * 10 + 1;
+        let end = page * 10;
         setPosts(json.filter(post => post.id >= start && post.id <= end));
         setLoading(false);
       })
